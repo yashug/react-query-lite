@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "../utils/react-query-lite";
 import { sleep } from "../utils";
 
 export default function Posts({ setPostId }) {
@@ -15,7 +16,7 @@ export default function Posts({ setPostId }) {
           <div>Error: {postsQuery.error.message}</div>
         ) : (
           <>
-            <ul className="list-none divide-solid divide-y-2 divide-gray-100">
+            <ul className="list-none divide-solid divide-y-2 divide-gray-800">
               {postsQuery.data.map((post) => (
                 <li
                   key={post.id}

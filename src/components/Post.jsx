@@ -1,4 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "../utils/react-query-lite";
 import axios from "axios";
 import { sleep } from "../utils";
 
@@ -23,7 +24,9 @@ export default function Post({ postId, setPostId }) {
               <h1 className="text-2xl">{postQuery.data.title}</h1>
               <p className="mt-4">{postQuery.data.body}</p>
             </div>
-            <div className="mt-4 italic text-green-600 font-bold">{postQuery.isFetching ? "Background Updating..." : null}</div>
+            <div className="mt-4 italic text-green-600 font-bold">
+              {postQuery.isFetching ? "Background Updating..." : null}
+            </div>
           </>
         )}
       </div>
